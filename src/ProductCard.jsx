@@ -18,14 +18,16 @@ const ProductCard = ({ title, description}) => (
           paddingRight: 2
         }}>
         <Card elevation={0}>
-          <CardMedia
-            component="img"
-            alt="Product card"
-            height="80"
-            width="80"
-            image="https://via.placeholder.com/80"
-            title="Product card"
-          />
+          <Link href="#">
+            <CardMedia
+              component="img"
+              alt="Product card"
+              height="80"
+              width="80"
+              image="https://via.placeholder.com/80"
+              title="Product card"
+            />
+          </Link>
         </Card>
       </Grid>
       <Grid item xs={8}>
