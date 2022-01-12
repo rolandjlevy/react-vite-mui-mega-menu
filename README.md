@@ -1,13 +1,9 @@
-## Running React on Repl.it
+# Mui Mega Menu
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
+> Using Material UI's [Popover](https://mui.com/components/popover) with the PopupState helper recommended on the [Mui menu page](https://mui.com/components/menus/)
 
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
+> The PopupState helper is a 3rd party package that takes care of menu state for you in most cases.
 
-Using the two in conjunction is one of the fastest ways to build a web app.
-
-### Getting Started
-- Hit run
-- Edit [App.jsx](#src/App.jsx) and watch it live update!
-
-By default, Replit runs the `dev` script, but you can configure it by changing the `run` field in the `.replit` file.
+### Links
+- https://www.npmjs.com/package/material-ui-popup-state
+- https://github.com/jcoreio/material-ui-popup-state

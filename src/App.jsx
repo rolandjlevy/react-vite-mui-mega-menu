@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import MenuPopup from './MenuPopup';
+import PopoverMenu from './PopoverMenu';
 
 function App() {
   return (
     <main>
-      <MenuPopup />
+      <PopoverMenu />
     </main>
   );
 }
