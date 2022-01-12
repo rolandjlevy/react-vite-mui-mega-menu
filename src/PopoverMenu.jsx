@@ -21,6 +21,11 @@ import ProductCard from './ProductCard';
 const PopoverMenu = () => {
   const popupState = usePopupState({ variant: 'popover' });
   const [search, setSearch] = useState('');
+
+  const showContent = (event) => {
+    console.log(event.target.textContent);
+  }
+
   const handleChange = (event) => {
     setSearch(event.target.value);
   }
@@ -65,11 +70,11 @@ const PopoverMenu = () => {
           }}>
             <Grid item xs={3}>
               <MenuList>
-                <MenuItem onClick={popupState.close}>Saw Blades</MenuItem>
-                <MenuItem onClick={popupState.close}>Circular Saws</MenuItem>
-                <MenuItem onClick={popupState.close}>Slitting Saws</MenuItem>
-                <MenuItem onClick={popupState.close}>Saw Frame</MenuItem>
-                <MenuItem onClick={popupState.close}>Hand Saws</MenuItem>
+                <MenuItem onMouseEnter={showContent} onClick={popupState.close}>Saw Blades</MenuItem>
+                <MenuItem onMouseEnter={showContent} onClick={popupState.close}>Circular Saws</MenuItem>
+                <MenuItem onMouseEnter={showContent} onClick={popupState.close}>Slitting Saws</MenuItem>
+                <MenuItem onMouseEnter={showContent} onClick={popupState.close}>Saw Frame</MenuItem>
+                <MenuItem onMouseEnter={showContent} onClick={popupState.close}>Hand Saws</MenuItem>
               </MenuList>
             </Grid>
             <Grid item xs={9}>
