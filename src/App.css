@@ -1,0 +1,8 @@
+body {
+  margin: 30px;
+}
+
+main {
+  display: 'flex';
+  justify-content:'center';
+}
