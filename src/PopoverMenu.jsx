@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@mui/styles';
+import { Styles } from './Styles';
 import { 
   Box, 
   Grid, 
@@ -7,27 +7,30 @@ import {
   MenuList,
   MenuItem, 
   Popover, 
-  TextField
+  TextField,
+  Typography
 } from '@mui/material';
+
+import ProductCard from './ProductCard';
 
 import {
   usePopupState,
   bindFocus,
-  bindMenu,
   bindPopover,
 } from 'material-ui-popup-state/hooks';
-import ProductCard from './ProductCard';
 
 const PopoverMenu = () => {
+  const classes = Styles();
   const popupState = usePopupState({ variant: 'popover' });
   const [search, setSearch] = useState('');
-
-  const showContent = (event) => {
-    console.log(event.target.textContent);
-  }
+  const [content, setTheContent] = useState('');
 
   const handleChange = (event) => {
     setSearch(event.target.value);
+  }
+  
+  const showContent = (event) => {
+    setTheContent(event.target.textContent);
   }
 
   return (
@@ -36,7 +39,7 @@ const PopoverMenu = () => {
         component="form"
         noValidate
         autoComplete="off"
-        sx={{ width:'calc(100vw - 32px)', maxWidth: 800 }}
+        className={classes.searchInput}
       >
         <TextField
           {...bindFocus(popupState)}
@@ -59,23 +62,20 @@ const PopoverMenu = () => {
             id="customized-menu"
             disableAutoFocus
           >
-          <Grid container sx={{
-            width: 'calc(100vw - 32px)',
-            maxWidth: 800,
-            height: '50vh',
-            maxHeight: 320,
-            top: 60,
-            left: 0,
-            padding: 1
-          }}>
+          <Grid container className={classes.popOverWrapper}>
             <Grid item xs={3}>
-              <MenuList>
-                <MenuItem onMouseEnter={showContent} onClick={popupState.close}>Saw Blades</MenuItem>
-                <MenuItem onMouseEnter={showContent} onClick={popupState.close}>Circular Saws</MenuItem>
-                <MenuItem onMouseEnter={showContent} onClick={popupState.close}>Slitting Saws</MenuItem>
-                <MenuItem onMouseEnter={showContent} onClick={popupState.close}>Saw Frame</MenuItem>
-                <MenuItem onMouseEnter={showContent} onClick={popupState.close}>Hand Saws</MenuItem>
-              </MenuList>
+              <>
+                <MenuList>
+                  <MenuItem onMouseEnter={showContent} onClick={popupState.close}>Saw Blades</MenuItem>
+                  <MenuItem onMouseEnter={showContent} onClick={popupState.close}>Circular Saws</MenuItem>
+                  <MenuItem onMouseEnter={showContent} onClick={popupState.close}>Slitting Saws</MenuItem>
+                  <MenuItem onMouseEnter={showContent} onClick={popupState.close}>Saw Frame</MenuItem>
+                  <MenuItem onMouseEnter={showContent} onClick={popupState.close}>Hand Saws</MenuItem>
+                </MenuList>
+                <Box className={classes.showContent}>
+                  <Typography>{content}</Typography>
+                </Box>
+              </>
             </Grid>
             <Grid item xs={9}>
               <Box flexDirection="column">
