@@ -31,6 +31,6 @@ export const Styles = makeStyles((theme) => ({
   showContent: {
     padding: 16,
     borderTop: '1px solid #ddd',
-    color: '#999',
+    color: '#666',
   }
 }));
