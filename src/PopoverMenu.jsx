@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Styles } from './Styles';
 import { 
   Box, 
@@ -15,6 +15,7 @@ import ProductCard from './ProductCard';
 
 import {
   usePopupState,
+  bindTrigger,
   bindFocus,
   bindPopover,
 } from 'material-ui-popup-state/hooks';
@@ -23,14 +24,14 @@ const PopoverMenu = () => {
   const classes = Styles();
   const popupState = usePopupState({ variant: 'popover' });
   const [search, setSearch] = useState('');
-  const [content, setTheContent] = useState('');
+  const [content, setContent] = useState('');
 
   const handleChange = (event) => {
     setSearch(event.target.value);
   }
-  
+
   const showContent = (event) => {
-    setTheContent(event.target.textContent);
+    setContent(event.target.textContent);
   }
 
   return (
@@ -42,24 +43,24 @@ const PopoverMenu = () => {
         className={classes.searchInput}
       >
         <TextField
-          {...bindFocus(popupState)}
           type="search"
           value={search}
           label="Search" 
           variant="outlined"
           fullWidth
-          aria-controls="customized-menu"
           aria-haspopup="true"
+          aria-describedby="customized-menu"
           onChange={handleChange}
+          {...bindFocus(popupState)}
         />
       </Box>
       
       {search.length > 1 ? (
         <Popover
-            {...bindPopover(popupState)}
             anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
             transformOrigin={{ vertical: 'top', horizontal: 'left' }}
             id="customized-menu"
+            {...bindPopover(popupState)}
             disableAutoFocus
           >
           <Grid container className={classes.popOverWrapper}>
