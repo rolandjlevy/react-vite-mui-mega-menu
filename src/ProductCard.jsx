@@ -13,7 +13,7 @@ const ProductCard = ({ title, description}) => {
   const classes = Styles();
   return (
     <Grid container sx={{ padding: 1 }}>
-      <Grid item xs={4} className={classes.cardImage}>
+      <Grid item xs={2} className={classes.cardImage}>
         <Card elevation={0}>
           <Link href="#">
             <CardMedia
@@ -25,7 +25,7 @@ const ProductCard = ({ title, description}) => {
           </Link>
         </Card>
       </Grid>
-      <Grid item xs={8}>
+      <Grid item xs={10}>
         <Box
           className={classes.cardContent}
           component={Link} 

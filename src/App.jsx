@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import PopoverMenu from './PopoverMenu';
+import PopoverClickaway from './PopoverClickaway';
 
 function App() {
   return (
     <main>
-      <PopoverMenu />
+      <PopoverClickaway />
     </main>
   );
 }

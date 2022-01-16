@@ -1,18 +1,23 @@
 import { makeStyles } from '@mui/styles';
 
 export const Styles = makeStyles((theme) => ({
-  searchInput: {
+  searchContainer: {
     width: 'calc(100vw - 32px)',
     maxWidth: 800,
   },
   popOverWrapper: {
+    position: "absolute",
+    top: 55,
+    right: 0,
+    left: 0,
     width: 'calc(100vw - 32px) !important',
     maxWidth: 800,
-    height: '50vh',
-    maxHeight: 308,
-    top: 60,
-    left: 0,
-    padding: 8,
+    height: 'auto',
+    padding: '0 8px',
+    zIndex: 1,
+    border: '1px solid #ccc',
+    borderRadius: '0 0 8px 8px'
+
   },
   cardImage: {
     display:'flex', 
@@ -28,9 +33,13 @@ export const Styles = makeStyles((theme) => ({
     height: 'calc(100% - 16px)',
     padding: 8,
   },
+  contentContainer: {
+    borderLeft: '1px solid #ccc',
+    padding: '8px 0',
+  },
   showContent: {
     padding: 16,
-    borderTop: '1px solid #ddd',
+    borderTop: '1px solid #ccc',
     color: '#666',
   }
 }));

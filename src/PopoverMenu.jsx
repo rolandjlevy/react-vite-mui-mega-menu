@@ -25,6 +25,8 @@ const PopoverMenu = () => {
   const popupState = usePopupState({ variant: 'popover' });
   const [search, setSearch] = useState('');
   const [content, setContent] = useState('');
+  
+  const inputRef = useRef(null);
 
   const handleChange = (event) => {
     setSearch(event.target.value);
@@ -32,6 +34,11 @@ const PopoverMenu = () => {
 
   const showContent = (event) => {
     setContent(event.target.textContent);
+  }
+
+  const sendValue = () => {
+    console.log(inputRef);
+    setTimeout(() => inputRef.current.focus())
   }
 
   return (
@@ -52,6 +59,8 @@ const PopoverMenu = () => {
           aria-describedby="customized-menu"
           onChange={handleChange}
           {...bindFocus(popupState)}
+          onClick={sendValue}
+          inputRef={inputRef}
         />
       </Box>
       
