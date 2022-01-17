@@ -5,6 +5,10 @@ export const Styles = makeStyles((theme) => ({
     width: 'calc(100vw - 32px)',
     maxWidth: 800,
   },
+  formContainer: {
+    position: "relative", 
+    display: 'inline-block',
+  },
   popOverWrapper: {
     position: "absolute",
     top: 55,
@@ -17,7 +21,6 @@ export const Styles = makeStyles((theme) => ({
     zIndex: 1,
     border: '1px solid #ccc',
     borderRadius: '0 0 8px 8px'
-
   },
   cardImage: {
     display:'flex', 

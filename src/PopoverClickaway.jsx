@@ -40,7 +40,7 @@ export default function PopoverClickaway() {
   return (
     <ClickAwayListener onClickAway={closePopover}>
 
-      <Box style={{ position: "relative" }}>
+      <Box className={classes.formContainer}>
 
         <Box
           component="form"
