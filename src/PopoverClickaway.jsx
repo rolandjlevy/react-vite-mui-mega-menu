@@ -3,9 +3,7 @@ import { Styles } from './Styles';
 import { 
   Box, 
   ClickAwayListener,
-  Container,
   Grid, 
-  Menu, 
   MenuList,
   MenuItem, 
   Popover, 
@@ -21,7 +19,7 @@ export default function PopoverClickaway() {
   const [search, setSearch] = useState('');
   const [content, setContent] = useState('');
 
-  const openPopover = (event) => {
+  const openPopover = () => {
     setOpen(true);
   };
 
