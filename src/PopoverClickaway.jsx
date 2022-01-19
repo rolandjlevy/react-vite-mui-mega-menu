@@ -8,7 +8,8 @@ import {
   MenuItem, 
   Popover, 
   TextField,
-  Typography
+  Typography,
+  Fade
 } from '@mui/material';
 
 import ProductCard from './ProductCard';
@@ -59,7 +60,7 @@ export default function PopoverClickaway() {
           />
         </Box>
 
-        {open && search.length > 1 ? (
+          <Fade in={open && search.length > 1} timeout={200} >
             <Grid container className={classes.popOverWrapper}>
               <Grid item xs={3}>
                 <>
@@ -83,7 +84,7 @@ export default function PopoverClickaway() {
                 </Box>
               </Grid>
             </Grid>
-        ) : null}
+          </Fade>
 
       </Box>
 

@@ -20,7 +20,10 @@ export const Styles = makeStyles((theme) => ({
     padding: '0 8px',
     zIndex: 1,
     border: '1px solid #ccc',
-    borderRadius: '0 0 8px 8px'
+    borderRadius: '0 0 8px 8px',
+    backgroundColor: '#ffffff',
+    opacity: 0,
+    display: 'none',
   },
   cardImage: {
     display:'flex', 
@@ -44,5 +47,35 @@ export const Styles = makeStyles((theme) => ({
     padding: 16,
     borderTop: '1px solid #ccc',
     color: '#666',
-  }
+  },
+  fadeIn: {
+    animation: '$fadeInAnimation ease-in 0.15s',
+    animationIterationCount: 1, 
+    animationFillMode: 'forwards',
+  },
+  fadeOut: {
+    animation: '$fadeOutAnimation ease-in 0.15s',
+    animationIterationCount: 1, 
+    animationFillMode: 'forwards',
+  },
+  '@keyframes fadeInAnimation': {
+    '0%': {
+      opacity: 0,
+      display: 'none',
+    },
+    '100%': {
+      opacity: 1,
+      display: 'block',
+    }
+  },
+  '@keyframes fadeOutAnimation': {
+    '0%': {
+      opacity: 1,
+      display: 'none',
+    },
+    '100%': {
+      opacity: 0,
+      display: 'block',
+    }
+  },
 }));
